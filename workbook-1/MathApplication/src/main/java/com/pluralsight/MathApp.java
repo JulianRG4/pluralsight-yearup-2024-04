@@ -16,19 +16,22 @@ public class MathApp
     }
 
     // write ONLY code for QUESTION 1 in this function
-    public static void question1()
-    {
+    public static void question1() {
         // Question 1:
         // declare variables here
+        double bobSalary = 15.5;
+        double garySalary = 20;
+        double highestSalary;
 
 
         // code the logic to the problem here
-
+        highestSalary = Math.max(bobSalary, garySalary);
 
         // use System.out.println() to display results
         // ex: System.out.println("The answer is " + answer);
-    }
+        System.out.println("Highest salary: " + highestSalary);
 
+    }
 
     // write ONLY code for QUESTION 2 in this function
     public static void question2()

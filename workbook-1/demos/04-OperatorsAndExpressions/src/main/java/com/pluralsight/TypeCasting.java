@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.sql.SQLOutput;
+
 public class TypeCasting
 {
     public static void main(String[] args)
@@ -29,7 +31,7 @@ public class TypeCasting
         int myInt;
         long myLong = 9;
 
-        float myFloat;
+        float myFloat = 1;
         double myDouble = 123.4567890123;
 
         // an int won't necessarily fit in a long
@@ -37,6 +39,8 @@ public class TypeCasting
 
         // a double won't necessarily fit in a float
         // myFloat = myDouble;
+        System.out.println("double: " + myDouble);
+        System.out.println("Float: " + myFloat);
 
         // a float probably won't necessarily fit in an int
         // myLong = myFloat;
