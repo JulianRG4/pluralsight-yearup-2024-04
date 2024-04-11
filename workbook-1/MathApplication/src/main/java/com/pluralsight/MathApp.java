@@ -38,13 +38,18 @@ public class MathApp
     {
         // Question 2:
         // declare variables here
-
+        double carPrice = 5000.2;
+        double truckPrice = 10000.5;
+        double lowestPrice;
 
         // code the logic to the problem here
+        lowestPrice = Math.min(carPrice, truckPrice);
 
 
         // use System.out.println() to display results
         // ex: System.out.println("The answer is " + answer);
+        System.out.println("Lowest Price out of Truck or Car; $" + lowestPrice);
+
     }
 
 
@@ -53,13 +58,18 @@ public class MathApp
     {
         // Question 3:
         // declare variables here
+        double radius = 7.25;
+        double area = Math.PI;
 
 
         // code the logic to the problem here
+        area = Math.PI*(radius * radius);
 
 
         // use System.out.println() to display results
         // ex: System.out.println("The answer is " + answer);
+        System.out.println("Area = " + area);
+
     }
 
 
@@ -68,13 +78,19 @@ public class MathApp
     {
         // Question 4:
         // declare variables here
+        double squareRoot;
+        double variable = 5.0;
+
 
 
         // code the logic to the problem here
+        squareRoot = Math.sqrt(variable);
 
 
         // use System.out.println() to display results
         // ex: System.out.println("The answer is " + answer);
+        System.out.println("Square Root of 5 = " + Math.sqrt(variable));
+
     }
 
 
@@ -83,13 +99,25 @@ public class MathApp
     {
         // Question 5:
         // declare variables here
-
+        double firstPointX = 5;
+        double firstPointY = 10;
+        double secondPointX = 85;
+        double secondPointY = 50;
+        double height;
+        double width;
+        double distanceFromPoints;
 
         // code the logic to the problem here
+        width = secondPointX - firstPointX;
+        height = secondPointY - firstPointY;
+        distanceFromPoints = Math.pow(width,2) + Math.pow(height,2);
+        distanceFromPoints = Math.sqrt(distanceFromPoints);
+
 
 
         // use System.out.println() to display results
         // ex: System.out.println("The answer is " + answer);
+        System.out.println("Distances from First and Second Points = " +distanceFromPoints);
 
     }
 
@@ -99,13 +127,18 @@ public class MathApp
     {
         // Question 6:
         // declare variables here
+        double setVariable = -3.8;
+        double absolutePositiveValue;
 
 
         // code the logic to the problem here
+        absolutePositiveValue = Math.abs(setVariable);
 
 
         // use System.out.println() to display results
         // ex: System.out.println("The answer is " + answer);
+        System.out.println("The Absolute Positive Value of " + setVariable + " is " + absolutePositiveValue);
+
     }
 
 
@@ -115,11 +148,16 @@ public class MathApp
         // Question 7:
         // declare variables here
 
+        float randomNumber;
+
 
         // code the logic to the problem here
+        randomNumber = (float)Math.random();
 
 
         // use System.out.println() to display results
         // ex: System.out.println("The answer is " + answer);
+        System.out.println("Random Number Between 1 and 0: " + randomNumber);
+
     }
 }
