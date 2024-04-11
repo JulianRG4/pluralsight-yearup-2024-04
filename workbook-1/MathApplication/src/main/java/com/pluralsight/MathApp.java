@@ -1,9 +1,7 @@
 package com.pluralsight;
 
-public class MathApp
-{
-    public static void main(String[] args)
-    {
+public class MathApp {
+    public static void main(String[] args) {
         // find all 7 questions in your workbook on page 
         question1();
         question2();
@@ -34,8 +32,7 @@ public class MathApp
     }
 
     // write ONLY code for QUESTION 2 in this function
-    public static void question2()
-    {
+    public static void question2() {
         // Question 2:
         // declare variables here
         double carPrice = 5000.2;
@@ -54,8 +51,7 @@ public class MathApp
 
 
     // write ONLY code for QUESTION 3 in this function
-    public static void question3()
-    {
+    public static void question3() {
         // Question 3:
         // declare variables here
         double radius = 7.25;
@@ -63,7 +59,7 @@ public class MathApp
 
 
         // code the logic to the problem here
-        area = Math.PI*(radius * radius);
+        area = Math.PI * (radius * radius);
 
 
         // use System.out.println() to display results
@@ -74,13 +70,11 @@ public class MathApp
 
 
     // write ONLY code for QUESTION 4 in this function
-    public static void question4()
-    {
+    public static void question4() {
         // Question 4:
         // declare variables here
         double squareRoot;
         double variable = 5.0;
-
 
 
         // code the logic to the problem here
@@ -95,8 +89,7 @@ public class MathApp
 
 
     // write ONLY code for QUESTION 5 in this function
-    public static void question5()
-    {
+    public static void question5() {
         // Question 5:
         // declare variables here
         double firstPointX = 5;
@@ -110,21 +103,19 @@ public class MathApp
         // code the logic to the problem here
         width = secondPointX - firstPointX;
         height = secondPointY - firstPointY;
-        distanceFromPoints = Math.pow(width,2) + Math.pow(height,2);
+        distanceFromPoints = Math.pow(width, 2) + Math.pow(height, 2);
         distanceFromPoints = Math.sqrt(distanceFromPoints);
-
 
 
         // use System.out.println() to display results
         // ex: System.out.println("The answer is " + answer);
-        System.out.println("Distances from First and Second Points = " +distanceFromPoints);
+        System.out.println("Distances from First and Second Points = " + distanceFromPoints);
 
     }
 
 
     // write ONLY code for QUESTION 6 in this function
-    public static void question6()
-    {
+    public static void question6() {
         // Question 6:
         // declare variables here
         double setVariable = -3.8;
@@ -143,21 +134,19 @@ public class MathApp
 
 
     // write ONLY code for QUESTION 7 in this function
-    public static void question7()
-    {
+    public static void question7() {
         // Question 7:
         // declare variables here
-
-        float randomNumber;
+        double randomNumber;
 
 
         // code the logic to the problem here
-        randomNumber = (float)Math.random();
+        randomNumber = Math.random();
 
 
         // use System.out.println() to display results
         // ex: System.out.println("The answer is " + answer);
-        System.out.println("Random Number Between 1 and 0: " + randomNumber);
+        System.out.println("Random Number Between 0 and 1: " + randomNumber);
 
     }
 }
