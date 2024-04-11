@@ -8,25 +8,31 @@ public class Main
 
         // a vehicle identification number in the range 1000000 - 9999999
         int vehicleIdentificationNumber =  1000000;
+        System.out.println("Vehicle Identification Number: " + vehicleIdentificationNumber);
 
         // a vehicle make /model (i.e. Ford Explorer)
         String vehicleMakeAndModel = "Ford Explorer";
+        System.out.println("Vehicle Make and Model: " + vehicleMakeAndModel);
 
 
         // a vehicle color
         String vehicleColor = "red";
+        System.out.println("Vehicle Color" + vehicleColor);
 
 
         // whether the vehicle has a towing package
         boolean isVehicleTowingPackage = true;
+        System.out.println("Is Vehicle Towing a Package: " + isVehicleTowingPackage);
 
 
         // an odometer reading
         int vehicleSpeed = 45;
+        System.out.println("Vehicle Speed: " + vehicleColor);
 
 
         // a price
-        int price = 2;
+        double price = 2.5;
+        System.out.println("Price: " + price);
 
 
 
@@ -41,11 +47,12 @@ public class Main
 
         // a social security number
         int socialSecurityNumber = 123456789;
+        System.out.println("Social Security Number: " + socialSecurityNumber);
 
 
         // a zip code
         int zip = 12345;
-
+        System.out.println("Zip Code: " + zip);
 
     }
 }

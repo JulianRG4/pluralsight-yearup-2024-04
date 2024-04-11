@@ -35,6 +35,6 @@ public class Main
 
         // the name of your favorite restaurant
         String favoriteRestaurant = "Texas RoadHouse";
-
+        System.out.println("Favorite Restaurant: " + favoriteRestaurant);
     }
 }
