@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 public class GroceryStore
 {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
 
         // declare constants
@@ -28,6 +27,8 @@ public class GroceryStore
         System.out.print("Please enter your name: ");
         customerName = userInput.nextLine(); // waits for the user to enter their name
 
+        changeReturned = cashReceived -totalPrice;
+
         System.out.println();
         System.out.printf("Welcome %s. Today's products are: \n", customerName);
         System.out.printf("A) %s - $ %.2f \n", PRODUCT_CHOCOLATE, PRODUCT_CHOCOLATE_PRICE);
@@ -35,10 +36,19 @@ public class GroceryStore
         System.out.println();
 
         System.out.print("How many would you like to buy? ");
-        quantity = userInput.nextInt();
+        int productId = userInput.nextInt();
+
 
         // calculations
-        totalPrice = PRODUCT_CHOCOLATE_PRICE * quantity;
+        if(productId == 1)
+        {
+            totalPrice = PRODUCT_CHOCOLATE_PRICE * quantity;
+        }
+        else
+        {
+            System.out.println("You have made a Poor Selection");
+            return;
+        }
 
         System.out.printf("The total is %.2f \n", totalPrice);
 
@@ -54,4 +64,6 @@ public class GroceryStore
         System.out.printf("Cash:   $ %6.2f \n", cashReceived);
         System.out.printf("Change: $ %6.2f \n", changeReturned);
     }
+
+
 }

@@ -31,6 +31,6 @@ public class Main {
         grossPay = regularHoursWorked * payRate;
 
         System.out.printf("%s, your total gross pay is: \n%.2f", customerName, grossPay);
-        
+
     }
 }
