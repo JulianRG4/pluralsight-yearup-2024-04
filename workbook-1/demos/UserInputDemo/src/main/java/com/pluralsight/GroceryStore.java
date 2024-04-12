@@ -36,15 +36,12 @@ public class GroceryStore
 
         // display the receipt
         System.out.println();
-        String message = String.format("Total: %.2f \n" , totalPrice);
+        String message = String.format("Total: %.2f \n " , totalPrice);
         System.out.printf("Total: $ %10.3f " + totalPrice);
         System.out.println("Cash: " + cashReceived);
         System.out.println("Change: " + changeReturned);
 
 
     }
-
-
-
 
 }
