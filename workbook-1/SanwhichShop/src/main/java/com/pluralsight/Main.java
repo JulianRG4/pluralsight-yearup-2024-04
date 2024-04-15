@@ -11,6 +11,7 @@ public class Main
        final double regularSandwichPrice = 5.45;
        final int largeSandwich = 2;
        final double largeSandwichPrice = 8.95;
+       double price = 0;
 
 
         System.out.println("Sandwich Shop Menu");
@@ -29,17 +30,17 @@ public class Main
             discount = 0.0;
         }
 
-        double totalPrice;
+        double Price;
         if (sandwichSize == regularSandwich) {
-            totalPrice = regularSandwichPrice * (1 - discount);
+            price = regularSandwichPrice * (1 - discount);
         } else if (sandwichSize == largeSandwich) {
-            totalPrice = largeSandwichPrice * (1 - discount);
+            price = largeSandwichPrice * (1 - discount);
         }  else {
             System.out.println("Please input valid request");
-            return;
+
         }
 
-        System.out.println("Total Price: $" + String.format("%.2f",totalPrice));
+        System.out.println("Total Price: $" + String.format("%.2f",price));
 
 
 
