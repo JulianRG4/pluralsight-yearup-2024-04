@@ -7,14 +7,13 @@ public class Main
     public static void main(String[] args)
     {
         Scanner userInput = new Scanner(System.in);
-
-        int regularSandwich = 1;
-        double regularSandwichPrice = 5.45;
-        int largeSandwich = 2;
-        double largeSandwichPrice = 8.95;
-
+       final int regularSandwich = 1;
+       final double regularSandwichPrice = 5.45;
+       final int largeSandwich = 2;
+       final double largeSandwichPrice = 8.95;
 
 
+        System.out.println("Sandwich Shop Menu");
         System.out.println("(1)Regular:5.45 | (2)Large:8.95");
         int sandwichSize = userInput.nextInt();
 
