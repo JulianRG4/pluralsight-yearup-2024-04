@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Main
@@ -9,7 +10,6 @@ public class Main
     public static void main(String[] args)
     {
 
-
         int tickets;
 
        System.out.print("Number Of tickets:");
@@ -17,7 +17,8 @@ public class Main
        userInput.nextLine();
 
        displayReservation(tickets);
-        getName();
+       getName();
+       getDate();
 
 
 
@@ -42,15 +43,25 @@ public class Main
         String name;
 
 
-        System.out.println("Please Enter Full Name");
+        System.out.print("Please Enter Full Name");
         name = userInput.nextLine();
         String[] parts = name.split(" ");
         firstName = parts[0].strip();
         lastName = parts[1].strip();
         return lastName + "," + firstName;
 
+    }
+    public  String getDate()
+    {
+        String ticketDateInput;
+        System.out.print("Date of Movie");
+        ticketDateInput =userInput.nextLine();
+        DateTimeFormatter ticketDateFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        localDate ticketDate = localDate.parse(ticketDate,ticketDateFormat);
+        return ticketDate.toString();
 
     }
+
 
 
 }
