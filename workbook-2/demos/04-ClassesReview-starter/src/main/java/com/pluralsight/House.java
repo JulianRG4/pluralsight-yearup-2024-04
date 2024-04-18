@@ -22,9 +22,17 @@ public class House
     {
         return insideColor;
     }
+    public void setInsideColor(String insideColor)
+    {
+        this.insideColor = insideColor;
+    }
     public String getOutsideColor()
     {
         return outsideColor;
+    }
+    public void setOutsideColor(String outsideColor)
+    {
+        this.outsideColor = outsideColor;
     }
     public void paintOuside(String color)
     {

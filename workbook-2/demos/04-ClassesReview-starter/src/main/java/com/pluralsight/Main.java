@@ -14,7 +14,7 @@ public class Main
 
         System.out.println("What year was thr house built?");
         year = userInput.nextInt();
-        System.out.println();
+        userInput.nextLine();
 
         System.out.println("What is the interior color?");
         interiorColor = userInput.nextLine();
@@ -25,10 +25,19 @@ public class Main
 
         House house1 = new House(year, interiorColor, exteriorColor);
 
-        System.out.println("Woohoo");
-        System.out.println("I have a" + house1.getOutsideColor() + "House");
+        displayInfo(house1);
 
-        house1.paintOuside("Yellow");
+
+        System.out.println("woohoo");
+        System.out.println("I have a " + house1.getInsideColor() + " house");
+        System.out.println("I have a " + house1.getOutsideColor() + " house");
+    }
+    public static void displayInfo(House house)
+    {
+        System.out.println();
+        System.out.println("Year: " + house.getYearBuilt());
+        System.out.println("Interior: " + house.getInsideColor());
+        System.out.println("Exterior: " + house.getOutsideColor());
     }
 
 }
