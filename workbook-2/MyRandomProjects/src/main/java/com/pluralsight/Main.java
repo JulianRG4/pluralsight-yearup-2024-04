@@ -1,30 +1,17 @@
 package com.pluralsight;
 
-import java.util.Scanner;
-
+import java.util.Arrays;
 public class Main
-{   public static Scanner userInput = new Scanner(System.in);
-
-    public static void main(String[] args)
+{
+    public static void main(String args[])
     {
-        Car car = buildCar();
-
-
-    }
-    public static Car buildCar()
-    {
-        System.out.println("enter your car miles");
-        int miles = userInput.nextInt();
-        userInput.nextLine();
-
-        System.out.println("Car Brand");
-       String  brand = userInput.nextLine();
-
-        System.out.println("Car Model");
-       String  model = userInput.nextLine();
-
-       Car car1 =new Car(miles,brand,model);
-
-        return car1;
+        String[] colors = {"red", "white", "blue"};
+        String[] colorCopy = new String[3];
+        // copy from colors at subscript 1 to
+        // colorCopy at 0 -- move 2 elements
+        System.arraycopy(colors, 1, colorCopy, 0, 2);
+        for (int i = 0; i < 2; i++) {
+            System.out.println(colorCopy[i]);
+        }
     }
 }
