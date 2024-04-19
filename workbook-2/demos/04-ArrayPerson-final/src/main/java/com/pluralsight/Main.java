@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main
@@ -105,6 +106,19 @@ public class Main
         System.out.println();
         System.out.println("Search Athletes by Age");
         System.out.println("----------------------------------------");
+
+        System.out.print("Enter min age: ");
+        int min = Integer.parseInt(userInput.nextLine());
+        System.out.print("Enter max age:");
+        int max = Integer.parseInt(userInput.nextLine());
+
+        for(int i = 0; i < people.length; i ++){
+            Person person =people[i];
+            if(person.getAge() >= min && person.getAge() <= max){
+                System.out.printf("%-15s %-10s %d\n", person.getFirstName(), person.getLastName(), person.getAge());
+                }
+
+    }
     }
 
     public static Person[] addPerson(Person[] people)
@@ -113,11 +127,30 @@ public class Main
         System.out.println("Add Athlete");
         System.out.println("----------------------------------------");
         // get user input
+        System.out.print("First Name:");
+        String firstName = userInput.nextLine().strip();
+        System.out.println("Last Name");
+        String lastName = userInput.nextLine().strip();
+        System.out.println("Age");
+        int age = Integer.parseInt(userInput.nextLine().strip());
 
         // create a person
+        Person person = new Person(firstName, lastName, age);
 
         // add to the list
 
+
+        //Create the new array
+        Person[] tempArray = new Person[people.length + 1];
+        // 2. copy all of the people from arr1 to arr2
+        System.arraycopy(people, 0, tempArray, 0, people.length);
+        // 3. add the new person to the new array
+        tempArray[people.length] = person;
+        // 4. point the old array to the new location
+        people = tempArray;
+
         return people;
+
+
     }
 }

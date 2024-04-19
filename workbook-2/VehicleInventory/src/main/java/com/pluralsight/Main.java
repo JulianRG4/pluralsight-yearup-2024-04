@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main
@@ -9,7 +10,7 @@ public class Main
     public static void main(String[] args)
     {
         // create an array of vehicles here
-        Vehicle[] vehicle = {
+        Vehicle[] vehicles = {
                 new Vehicle( 101121,"Ford Explorer","Red",45000,13500),
                 new  Vehicle(101122,"Toyota Camry","Blue",60000,11000),
                 new  Vehicle(101123,"Chevrolet Malibu","Black",50000,9700),
@@ -27,10 +28,10 @@ public class Main
             System.out.println();
             System.out.println("What do you want to do?");
             System.out.println();
-            System.out.println("1 - List all vehicles".strip());
-            System.out.println("2 - Search by make/model".strip());
-            System.out.println("3 - Search by price range".strip());
-            System.out.println("4 - Search by color".strip());
+            System.out.println("1 - List all vehicles");
+            System.out.println("2 - Search by make/model");
+            System.out.println("3 - Search by price range");
+            System.out.println("4 - Search by color");
             System.out.println("5 - Add a vehicle");
             System.out.println("6 - Quit");
             System.out.println();
@@ -42,24 +43,25 @@ public class Main
                 case 1:
                     // call the list all vehicles (pass the array)
                     // listAllVehicles(vehicles);
-                    listAllVehicles(vehicle);
+                    listAllVehicles(vehicles);
+
 
                     break;
                 case 2:
                     // call the search by make/model
-                    searchByMakeModel(vehicle);
+                    searchByMakeModel(vehicles);
                     break;
                 case 3:
                     // call the search by price
-                    searchByPrice(vehicle);
+                    searchByPrice(vehicles);
                     break;
                 case 4:
                     // call the search by color
-                    searchByColor(vehicle);
+                    searchByColor(vehicles);
                     break;
                 case 5:
                     // add a vehicle
-                    addVehicle(vehicle);
+                    vehicles = addVehicle(vehicles);
                     break;
                 case 6:
                     System.out.println();
@@ -114,8 +116,11 @@ public class Main
         System.out.println();
         System.out.println("Search by Sell Price Range");
         System.out.println("-------------------");
-        String searchPrice = userInput.nextLine();
 
+        System.out.print("Enter min Price:");
+        int min = Integer.parseInt(userInput.nextLine());
+        System.out.println("Enter max Price");
+        int max =Integer.parseInt(userInput.nextLine());
 
         // loop through vehicles and print only vehicles that match the search
         for(int i = 0; i < vehicles.length; i++ ) {
@@ -139,11 +144,12 @@ public class Main
     }
 
     // bonus (optional)
-    public static void addVehicle(Vehicle[] vehicles)
+    public static Vehicle[] addVehicle(Vehicle[] vehicles)
     {
         // get user input
         System.out.println("Add Vehicle info");
         System.out.println("-------------------");
+
         System.out.print("Vehicle ID: ");
         int vehicleId = userInput.nextInt();
         userInput.nextLine();
@@ -164,20 +170,19 @@ public class Main
         userInput.nextLine();
 
         // create a vehicle
-        Vehicle  Vehicle = new Vehicle(vehicleId,makeModel,color,odometerReading,price);
+        Vehicle  vehicle = new Vehicle(vehicleId,makeModel,color,odometerReading,price);
 
-        Vehicle[] updatedVehicles = new Vehicle[vehicles.length + 1];
-        for(int i = 0; i < vehicles.length; i++){
-            updatedVehicles[i] = vehicles[i];
+        Vehicle[] tempArray = new Vehicle[vehicles.length + 1];
+        System.arraycopy(vehicles, 0, tempArray, 0, vehicles.length);
+        tempArray[vehicles.length] = vehicle;
+        vehicles = tempArray;
 
-            vehicles = updatedVehicles;
 
-
-        }
         System.out.println("Finished!!!");
+        return vehicles;
 
 
-        // add it to the inventory
+        // add it to the inventor
 
         // hint: you will need to create a new array that is 1 bigger than the old one
         //       then add the new vehicle in the last spot
