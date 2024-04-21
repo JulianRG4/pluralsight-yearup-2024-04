@@ -160,7 +160,6 @@ public class Main
         System.out.print("Car color: ");
         String color = userInput.nextLine();
 
-
         System.out.print("Odometer reading: ");
         int odometerReading = userInput.nextInt();
         userInput.nextLine();
