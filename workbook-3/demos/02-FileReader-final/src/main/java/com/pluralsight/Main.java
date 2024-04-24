@@ -12,7 +12,11 @@ public class Main
         System.out.print("Enter the name of the file: ");
         String fileName = userInput.nextLine();
 
-        String filePath = "files/mary_had_a_little_lamb.txt";
+        /'''
+
+
+
+        '
 
         // 1. I need a File object that points to the text file
         File file = new File(filePath);
