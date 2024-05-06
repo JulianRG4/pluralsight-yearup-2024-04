@@ -14,13 +14,15 @@ public class PrintWriterDemo
     {
         File file = new File("files/programming-languages-print-writer.txt");
 
-        try(FileWriter fileWriter = new FileWriter(file);
+        // New FileWriter(file) -> create new file and overwrites the existing one
+        // new FileWriter(file, true) -> opens the existing file for appending
+        try(FileWriter fileWriter = new FileWriter(file, true);
             PrintWriter writer = new PrintWriter(fileWriter);
         )
         {
             for(String line : words)
             {
-                // works like System.out.printxxx()
+                // works like System.out.print()
                 writer.println(line);
             }
         }

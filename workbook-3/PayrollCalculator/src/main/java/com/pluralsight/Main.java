@@ -1,7 +1,10 @@
 package com.pluralsight;
 
+import javax.naming.NamingEnumeration;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -13,9 +16,33 @@ public class Main
     {
         loadEmployees();
         displayAllEmployees();
+        String[] grossPay = {"GrossPay"};
+        writeToFile(grossPay);
 
 
     }
+
+    public static void writeToFile(String[] words)
+    {
+        File file = new File("File/PayrollGrossPay.csv");
+
+        try(FileWriter fileWriter = new FileWriter(file, true);
+        PrintWriter writer = new PrintWriter(fileWriter)
+        )
+        {
+            for(String line : words)
+            {
+                writer.println(line);
+            }
+        }
+        catch (IOException ex)
+        {
+            System.out.println("Sorry, we encountered an error");
+        }
+
+    }
+
+
 
     public static void loadEmployees()
     {
@@ -53,8 +80,8 @@ public class Main
     {
         System.out.println();
         System.out.println("All employees");
-        System.out.println("-".repeat(70));
-        System.out.println("Id:             Name:             Hours Payed:           Pay Rate: ");
+        System.out.println("-".repeat(90));
+        System.out.println("Id:             Name:             Hours worked:           Pay Rate:            Gross pay");
 
         for(Employee employee : employees)
         {
@@ -64,7 +91,7 @@ public class Main
 
     public static void printEmployees(Employee employee)
     {
-        System.out.printf("%-15s %-20s %-20.2f %-20.2f\n", employee.getiD(),employee.getName(),employee.getHoursWorked(),employee.getPayRate());
+        System.out.printf("%-15s %-20s %-20.2f %-20.2f %-20.2f\n", employee.getiD(),employee.getName(),employee.getHoursWorked(),employee.getPayRate(), employee.getGrossPay());
     }
 
 }

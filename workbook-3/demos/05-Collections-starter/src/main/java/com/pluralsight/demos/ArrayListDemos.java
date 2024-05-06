@@ -6,7 +6,9 @@ public class ArrayListDemos
 {
     public static void main(String[] args)
     {
+        ArrayList<Integer> numbers = new ArrayList<Integer>();
         ArrayList<String> heroes = new ArrayList<String>();
+
         heroes.add("Spider-Man");
         heroes.add("Iron Man");
         heroes.add("Thor");

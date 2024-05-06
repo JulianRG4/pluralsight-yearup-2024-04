@@ -25,7 +25,7 @@ public class PrintWriterDemo
         {
             for(String line : words)
             {
-                // works like System.out.printxxx()
+                // works like System.out.print()
                 writer.println(line);
                 writer.flush();
             }
