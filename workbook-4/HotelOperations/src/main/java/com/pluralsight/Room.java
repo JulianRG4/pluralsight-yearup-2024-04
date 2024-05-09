@@ -68,4 +68,5 @@ public class Room {
     {
         dirty = occupied ? false : dirty;
     }
+
 }

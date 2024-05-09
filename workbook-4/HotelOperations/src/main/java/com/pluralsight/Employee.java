@@ -57,5 +57,25 @@ public class Employee
         this.hoursWorked = hoursWorked;
     }
 
+    public double getRegularPay() {
+        if (hoursWorked <= 40) {
+            return payRate * hoursWorked;
+        } else {
+            return payRate * 40;
+        }
+    }
+    public double getOvertimePay()
+    {
+        if (hoursWorked > 40) {
+            return payRate * (hoursWorked - 40) * 1.5; // Overtime pay rate is 1.5 times the regular pay rate
+        } else {
+            return 0; // No overtime pay if worked hours are less than or equal to 40
+        }
+    }
+
+    public double getTotalPay()
+    {
+        return getRegularPay() + getOvertimePay();
+    }
 
 }
