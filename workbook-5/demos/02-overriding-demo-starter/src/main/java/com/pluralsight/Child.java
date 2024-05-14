@@ -6,4 +6,10 @@ public class Child extends Person
     {
         super(id, name);
     }
+
+    @Override
+    public String play()
+    {
+        return getName() + "is a child and is eating sand";
+    }
 }
