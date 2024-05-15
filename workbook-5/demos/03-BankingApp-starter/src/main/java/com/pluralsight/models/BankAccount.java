@@ -44,4 +44,9 @@ public class BankAccount
     {
         return true;
     }
+
+    public double withdraw()
+    {
+
+    }
 }
