@@ -5,6 +5,7 @@ import com.pluralsight.models.CheckingAccount;
 import com.pluralsight.services.AccountFileService;
 import com.pluralsight.ui.UserInterface;
 
+
 import java.util.ArrayList;
 
 public class BankApplication
@@ -32,6 +33,7 @@ public class BankApplication
                 case 2: // deposit
                     // search by account number
                     // deposit money into the account
+                    deposit();
                     break;
                 case 3: // transfer
                     // search for BOTH accounts
@@ -75,5 +77,24 @@ public class BankApplication
         {
             UserInterface.displayMessage("Sorry, you don't got enough");
         }
+    }
+
+    public void deposit()
+    {
+        int accountNumber = UserInterface.getAccountNumber();
+        BankAccount account = bankAccounts.stream()
+                .filter(acct -> acct.getAccountNumber() == accountNumber)
+                .findFirst()
+                .orElse(null);
+
+        if (account == null) {
+            UserInterface.displayMessage("Account not found.");
+            return;
+        }
+
+        double amount = UserInterface.getDepositAmount();
+        account.deposit(amount);
+        UserInterface.displayMessage(amount + " was deposited");
+        UserInterface.displayMessage("New Balance: " + account.getBalance());
     }
 }

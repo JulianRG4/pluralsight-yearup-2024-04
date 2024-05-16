@@ -35,6 +35,12 @@ public class UserInterface
         System.out.print("Please enter the amount to withdraw: ");
         return Double.parseDouble(in.nextLine());
     }
+    public static double getDepositAmount()
+    {
+        System.out.println();
+        System.out.print("Please enter the amount to deposit: ");
+        return Double.parseDouble(in.nextLine());
+    }
 
     public static void displayMessage(String message)
     {
