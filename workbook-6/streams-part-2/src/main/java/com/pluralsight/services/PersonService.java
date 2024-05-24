@@ -8,19 +8,16 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class PersonService
-{
+public class PersonService {
 
-    public List<Person> findPeople(List<Person> people, String name)
-    {
+    public List<Person> findPeople(List<Person> people, String name) {
         return people.stream()
                 .filter(person -> person.getFirstName().equalsIgnoreCase(name))
                 .collect(Collectors.toList());
 
     }
 
-    public List<Person> findPeople(List<Person> people, int age)
-    {
+    public List<Person> findPeople(List<Person> people, int age) {
         //using both ways to see difference with using List<Person> and return people.
         List<Person> findByAge = people.stream()
                 .filter(person -> person.getAge() == age)
@@ -28,8 +25,7 @@ public class PersonService
         return findByAge;
     }
 
-    public int calculateAverageAge(List<Person> people)
-    {
+    public int calculateAverageAge(List<Person> people) {
         int totalAge = people.stream()
                 .mapToInt(person -> person.getAge())
                 .sum();
@@ -37,8 +33,7 @@ public class PersonService
         return totalAge / people.size();
     }
 
-    public int findOldestAge(List<Person> people)
-    {
+    public int findOldestAge(List<Person> people) {
 
         return people.stream()
                 .mapToInt(Person::getAge)
@@ -46,8 +41,7 @@ public class PersonService
                 .getAsInt();
     }
 
-    public int findYoungestAge(List<Person> people)
-    {
+    public int findYoungestAge(List<Person> people) {
 
         return people.stream()
                 .mapToInt(Person::getAge)
@@ -55,15 +49,14 @@ public class PersonService
                 .getAsInt();
     }
 
-    public List<Person> sortYoungestFirst(List<Person> people)
-    {return people.stream()
-            .sorted(Comparator.comparingInt(Person::getAge))
-            .collect(Collectors.toList());
+    public List<Person> sortYoungestFirst(List<Person> people) {
+        return people.stream()
+                .sorted(Comparator.comparingInt(Person::getAge))
+                .collect(Collectors.toList());
     }
 
 
-    public List<Person> sortOldestFirst(List<Person> people)
-    {
+    public List<Person> sortOldestFirst(List<Person> people) {
         return people.stream()
                 .sorted(Comparator.comparingInt(Person::getAge).reversed())
                 .collect(Collectors.toList());
@@ -71,22 +64,11 @@ public class PersonService
 
     public List<Employee> createEmployees(List<Person> people)
     {
-        List<Employee> employees = new ArrayList<>();
-
-      
-        List<Person> peopleEmployed = PeopleBuilder.createPeopleList();
-        for (Person person : peopleEmployed)
-        {
-            double salary = calculateSalary(person.getAge());
-            Employee employee = new Employee(person.getFirstName(), person.getLastName(), person.getAge(), salary);
-            employees.add(employee);
-        }
-
+        List<Employee> employees = people.stream()
+                .map(person -> {
+                    return new Employee(person.getFirstName(), person.getLastName(), person.getAge(), person.getAge() * 3000);
+                })
+                .toList();
         return employees;
-    }
-
-    private double calculateSalary(int age)
-    {
-        return age * 3000;
     }
 }

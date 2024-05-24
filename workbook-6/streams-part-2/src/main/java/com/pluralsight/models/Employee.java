@@ -13,6 +13,9 @@ public class Employee extends Person
     {
     }
 
+    public Employee(String firstName, String lastName, int i) {
+    }
+
     public double getSalary()
     {
         return salary;
