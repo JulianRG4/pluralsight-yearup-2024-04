@@ -24,7 +24,6 @@ public class Portfolio
 
     public double getValue()
     {
-        //Loop through all assets and add values
         return 0;
     }
 
