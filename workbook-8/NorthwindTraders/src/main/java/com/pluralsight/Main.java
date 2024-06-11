@@ -11,10 +11,9 @@ public class Main
 
         try
         {
-            Class.forName("com.mysql.cl.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
 
-            Connection connection = null;
-            Connection Connection = DriverManager.getConnection(
+            Connection connection = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/northwind",
                     username,
                     password);
@@ -39,7 +38,7 @@ public class Main
                 int ReorderLevel = resultSet.getInt("ReorderLevel");
                 int Discontinued = resultSet.getInt("Discontinued");
 
-                System.out.printf("%-10d %-10s %-10d %-10d %-10s %-10d %-10d %-10d %-10d %-10d", ProductID, ProductName, SupplierID, CategoryID,QuantityPerUnit, UnitPrice, UnitsInStock, UnitsOnOrder, ReorderLevel, Discontinued);
+                System.out.printf("%-10d %-10s %-10d %-10d %-10s %-10d %-10d %-10d %-10d %-10d \n", ProductID, ProductName, SupplierID, CategoryID,QuantityPerUnit, UnitPrice, UnitsInStock, UnitsOnOrder, ReorderLevel, Discontinued);
             }
 
             connection.close();
