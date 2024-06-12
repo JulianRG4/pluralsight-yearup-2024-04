@@ -44,6 +44,7 @@ public class Main
                     break;
                 case 3:
                     categories();
+                    searchAllProducts();
                     break;
                 case 0:
                     System.out.println("Exiting");
@@ -54,6 +55,11 @@ public class Main
 
     public static void searchAllProducts ()
     {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter category ID");
+        int categoryId = scanner.nextInt();
+
         String username = "root";
         String password = "YUm15510n";
 
@@ -68,10 +74,12 @@ public class Main
 
             String sql = """
                         SELECT * 
-                        FROM products;
+                        FROM products
+                        WHERE CategoryID = ?;
                         """;
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(sql);
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1,categoryId);
+            ResultSet resultSet = statement.executeQuery();
 
             System.out.println("Product ID        Product Name                    Unit Price           Units In Stock");
 
@@ -84,7 +92,6 @@ public class Main
 
                 System.out.printf("%-20d %-35s %-15d %-10d \n", ProductID, ProductName, UnitPrice, UnitsInStock);
             }
-
             connection.close();
         }
         catch (Exception e)
@@ -163,8 +170,6 @@ public class Main
                 String categoryName = row.getString("CategoryName");
 
                 System.out.printf("%-20d %s\n", categoryId, categoryName);
-
-
             }
         }
         catch (SQLException e)
