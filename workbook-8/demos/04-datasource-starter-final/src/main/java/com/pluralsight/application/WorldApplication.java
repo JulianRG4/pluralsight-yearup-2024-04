@@ -21,6 +21,7 @@ public class WorldApplication
     public WorldApplication()
     {
         readProperties();
+
         // build a BasicDataSource
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setUrl(connectionString);
