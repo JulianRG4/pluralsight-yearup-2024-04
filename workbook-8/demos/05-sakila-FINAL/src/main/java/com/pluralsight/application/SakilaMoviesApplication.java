@@ -15,7 +15,6 @@ public class SakilaMoviesApplication
         this.config = config;
     }
 
-
     public void run()
     {
         while(true)
@@ -102,10 +101,7 @@ public class SakilaMoviesApplication
         {
             config.actorsController.deleteActor(actor.getActorId());
         }
-
     }
-
-
 
     private void filmsMenu()
     {
