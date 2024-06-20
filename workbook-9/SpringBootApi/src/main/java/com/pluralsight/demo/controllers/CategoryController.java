@@ -4,9 +4,7 @@ import com.pluralsight.demo.models.Category;
 import com.pluralsight.demo.models.Product;
 import com.pluralsight.demo.services.Categories.CategoryDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,5 +29,24 @@ public class CategoryController
     public Category getById(@PathVariable int id)
     {
         return categoryDao.getById(id);
+    }
+
+    @PostMapping("/categories")
+    public Category addCategory(@RequestBody Category category)
+    {
+        var newCategory = categoryDao.addCategory(category);
+        return newCategory;
+    }
+
+    @PutMapping("/categories/{categoryId}")
+    public void updateCategory(@PathVariable int categoryId, @RequestBody Category category)
+    {
+        categoryDao.updateCategory(categoryId, category);
+    }
+
+    @DeleteMapping("/categories/{categoryId}")
+    public void deleteCategory(@PathVariable int categoryId)
+    {
+        categoryDao.deleteCategory(categoryId);
     }
 }
